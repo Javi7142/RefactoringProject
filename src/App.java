@@ -55,6 +55,7 @@ public class App {
             myWriter.write(String.format("Total a pagar: %.2f \n", pedido.calcularSubtotalConIVA()));
             myWriter.close();
             System.out.println("Archivo guardado correctamente.");
+            System.out.println();
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
