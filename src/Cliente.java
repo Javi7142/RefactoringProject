@@ -1,23 +1,23 @@
 public class Cliente {
-    private String nombreCliente;
-    private String idCliente;
-    private String direccionCliente;
+    private String nombre;
+    private String id;
+    private String direccion;
 
-    public Cliente(String nombreCliente, String idCliente, String direccionCliente) {
-        this.nombreCliente = nombreCliente;
-        this.idCliente = idCliente;
-        this.direccionCliente = direccionCliente;
+    public Cliente(String nombre, String id, String direccion) {
+        this.nombre = nombre;
+        this.id = id;
+        this.direccion = direccion;
     }
 
-    public String getNombreCliente() {
-        return nombreCliente;
+    public String getNombre() {
+        return nombre;
     }
 
-    public String getIdCliente() {
-        return idCliente;
+    public String getId() {
+        return id;
     }
 
-    public String getDireccionCliente() {
-        return direccionCliente;
+    public String getDireccion() {
+        return direccion;
     }
 }

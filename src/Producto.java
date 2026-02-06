@@ -1,17 +1,17 @@
 public class Producto {
-    private String nombreProducto;
-    private double precioProducto;
+    private String nombre;
+    private double precio;
 
-    public Producto(String nombreProducto, double precioProducto) {
-        this.nombreProducto = nombreProducto;
-        this.precioProducto = precioProducto;
+    public Producto(String nombre, double precio) {
+        this.nombre = nombre;
+        this.precio = precio;
     }
 
-    public String getNombreProducto() {
-        return nombreProducto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public double getPrecioProducto() {
-        return precioProducto;
+    public double getPrecio() {
+        return precio;
     }
 }
