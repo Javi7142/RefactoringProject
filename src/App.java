@@ -62,7 +62,7 @@ public class App {
      */
     private static void generarFicheroPedido(Pedido pedido) {
         try {
-            FileWriter myWriter = new FileWriter(String.format("pedido_%s.txt", pedido.getCliente().getNombre()));
+            FileWriter myWriter = new FileWriter(String.format("pedido_%s.txt", pedido.getCliente().getId()));
             myWriter.write("FACTURA\n");
             myWriter.write(String.format("Cliente: %s \n", pedido.getCliente().getNombre()));
             myWriter.write(String.format("Direccion: %s \n", pedido.getCliente().getDireccion()));
