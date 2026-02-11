@@ -53,7 +53,7 @@ public class Pedido {
     /**
      * Calcula el subtotal aplicando descuento si cumple las condiciones.
      * 
-     * @return subtotal con descuento (si aplica).
+     * @return subtotal con descuento (si aplica), si no aplica, devolverá el subtotal normal.
      */
     public double calcularSubtotalConDescuento() {
         double subtotal = calcularSubtotal();

@@ -30,7 +30,6 @@ public class App {
     private static void procesarPedido(Pedido pedido) {
         imprimirPedido(pedido);
         generarFicheroPedido(pedido);
-
     }
     
     /**
