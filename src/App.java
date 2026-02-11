@@ -22,13 +22,22 @@ public class App {
         procesarPedido(pedido2);
     }
 
-
+    /**
+     * Procesa un pedido mostrando por pantalla la información y generando el archivo de la factura.
+     * 
+     * @param pedido pedido a procesar.
+     */
     private static void procesarPedido(Pedido pedido) {
         imprimirPedido(pedido);
         generarFicheroPedido(pedido);
 
     }
-        
+    
+    /**
+     * Muestra por pantalla los datos del pedido.
+     * 
+     * @param pedido pedido a imprimir.
+     */
     private static void imprimirPedido(Pedido pedido) {
         System.out.println(String.format("Procesando pedido para: %s", pedido.getCliente().getNombre()));
         System.out.println(String.format("ID Cliente: %s", pedido.getCliente().getId()));
@@ -41,11 +50,16 @@ public class App {
             System.out.println("Aplica descuento por gran volumen (5%)");
         }
 
-        System.out.println(String.format("Total Neto: %.2f", pedido.calcularSubtotal()));
+        System.out.println(String.format("Total Neto: %.2f", pedido.calcularSubtotalConDescuento()));
         System.out.println(String.format("Total con IVA: %.2f", pedido.calcularSubtotalConIVA()));
         System.out.println("--------------------------------------------------");
     }
 
+    /**
+     * Genera un archivo de texto con los datos del pedido.
+     * 
+     * @param pedido pedido del cual se genera el fichero
+     */
     private static void generarFicheroPedido(Pedido pedido) {
         try {
             FileWriter myWriter = new FileWriter(String.format("pedido_%s.txt", pedido.getCliente().getNombre()));

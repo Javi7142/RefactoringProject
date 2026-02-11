@@ -20,10 +20,20 @@ public class Pedido {
         return listaProductos;
     }
 
+    /**
+     * Agrega un producto a la lista de productos del pedido.
+     * 
+     * @param producto producto a agregar.
+     */
     public void agregarProducto(Producto producto) {
         listaProductos.add(producto);
     }
 
+    /**
+     * Calcula el subtotal sumando el precio de todos los productos.
+     * 
+     * @return subtotal total de los productos
+     */
     public double calcularSubtotal() {
         double subtotal = 0;
 
@@ -40,14 +50,25 @@ public class Pedido {
         return subtotal;
     }
 
-    public double calcularDescuento() {
+    /**
+     * Calcula el subtotal aplicando descuento si cumple las condiciones.
+     * 
+     * @return subtotal con descuento (si aplica).
+     */
+    public double calcularSubtotalConDescuento() {
         double subtotal = calcularSubtotal();
-
-            subtotal *= DESCUENTO;
+            if (aplicaDescuento()) {
+                subtotal *= DESCUENTO;
+            }
 
         return subtotal;
     }
 
+    /**
+     * comprueba si el subtotal es mayor de 3000 y aplica el descuento.
+     * 
+     * @return true si aplica descuento, false si no aplica
+     */
     public boolean aplicaDescuento() {
         double subtotal = calcularSubtotal();
         
@@ -58,8 +79,13 @@ public class Pedido {
         return false;
     }
 
+    /**
+     * Calcula el subtotal final aplicando descuento e IVA.
+     * 
+     * @return subtotal con descuento e IVA incluidos
+     */
     public double calcularSubtotalConIVA() {
-        double subtotal = calcularSubtotal();
+        double subtotal = calcularSubtotalConDescuento();
 
         subtotal += (subtotal * IVA);
 
